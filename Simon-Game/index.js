@@ -4,6 +4,14 @@ var gamePattern=[];
 var userClickedPattern=[];
 var level=0;
 var started=false;
+
+$(document).ready(function() {
+    if (!started) {
+        nextSequence();
+        started = true;
+    }
+});
+
 $(document).keypress(function()
 {
     if(!started)
@@ -14,6 +22,7 @@ $(document).keypress(function()
         
     }
 });
+
 $(".btn").click(function(){
     var userChosenColor=$(this).attr("id");
     userClickedPattern.push(userChosenColor);
